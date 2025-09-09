@@ -30,6 +30,7 @@
     "setup:env": "cp .env.example .env && cp apps/web/.env.example apps/web/.env && cp apps/server/.env.example apps/server/.env && cp apps/extension/.env.example apps/extension/.env",
     "setup:db": "cd apps/server && bun run db:local && bun run db:push && cd ../..",
     "verify": "bun scripts/verify-builds.js",
+    "verify:env": "bun scripts/verify-env.js",
     "verify:build": "turbo build",
     "verify:types": "turbo check-types",
     "verify:lint": "turbo lint",
