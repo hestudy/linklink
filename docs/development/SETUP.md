@@ -75,14 +75,38 @@ vim apps/extension/.env
 bun run setup:db
 ```
 
-### 6. 启动开发环境
+### 6. 一键设置开发环境
 
 ```bash
-# 使用便捷脚本启动所有应用
+# 一键设置：复制环境文件 + 安装依赖
 bun run setup
+```
 
-# 或者手动启动各个应用
+这个命令会：
+- 复制所有必需的环境变量文件
+- 安装项目依赖
+- 显示设置完成提示
+
+### 7. 启动开发环境
+
+设置完成后，启动所有应用：
+
+```bash
+# 启动所有应用（Web、Server、Extension）
 bun run dev
+```
+
+或者单独启动特定应用：
+
+```bash
+# 仅启动 Web 应用
+bun run dev:web
+
+# 仅启动 Server 应用  
+bun run dev:server
+
+# 仅启动 Extension 应用
+bun run dev:extension
 ```
 
 ## 应用访问地址

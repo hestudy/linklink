@@ -81,6 +81,45 @@
    SERVER_PORT="3001"
    ```
 
+### Setup 脚本失败
+
+**症状**: 运行 `bun run setup` 时出现错误，如 "Background commands '&' are not supported yet"。
+
+**解决方案**:
+
+1. 检查 Bun 版本：
+   ```bash
+   bun --version
+   # 确保使用最新版本
+   ```
+
+2. 如果遇到后台命令错误，使用分步设置：
+   ```bash
+   # 分步执行设置
+   bun run setup:env  # 复制环境文件
+   bun install        # 安装依赖
+   ```
+
+3. 检查脚本权限：
+   ```bash
+   chmod +x scripts/dev.sh
+   ```
+
+4. 手动验证环境设置：
+   ```bash
+   bun run verify:env
+   ```
+
+**常见错误及解决方案**:
+
+- **错误**: `Background commands "&" are not supported yet`
+  - **原因**: Bun 不支持 bash 后台命令语法
+  - **解决**: 使用更新后的 setup 脚本或分步执行
+
+- **错误**: `Permission denied`
+  - **原因**: 脚本文件没有执行权限
+  - **解决**: 运行 `chmod +x scripts/dev.sh`
+
 ### 环境变量问题
 
 **症状**: 应用无法读取环境变量，或使用默认值。

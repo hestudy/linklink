@@ -26,7 +26,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,md}\"",
     "type-check": "turbo check-types",
     "ci": "turbo build test lint type-check",
-    "setup": "bun scripts/dev.sh",
+    "setup": "bun run setup:env && bun install && echo '✅ 开发环境设置完成！请运行 bun run dev 启动应用'",
     "setup:env": "cp .env.example .env && cp apps/web/.env.example apps/web/.env && cp apps/server/.env.example apps/server/.env && cp apps/extension/.env.example apps/extension/.env",
     "setup:db": "cd apps/server && bun run db:local && bun run db:push && cd ../..",
     "verify": "bun scripts/verify-builds.js",
