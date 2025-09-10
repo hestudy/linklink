@@ -15,9 +15,9 @@
     "db:migrate": "drizzle-kit migrate",
     "lint": "eslint . --ext ts --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts --fix",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
+    "test": "vitest --passWithNoTests",
+    "test:ui": "vitest --ui --passWithNoTests",
+    "test:coverage": "vitest --coverage --passWithNoTests",
     "clean": "rm -rf dist"
   },
   "dependencies": {

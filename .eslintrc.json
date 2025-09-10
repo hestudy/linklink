@@ -4,7 +4,7 @@
     "node": true,
     "es2022": true
   },
-  "extends": ["eslint:recommended", "@typescript-eslint/recommended"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -31,7 +31,7 @@
       "files": ["apps/web/**/*.{ts,tsx}"],
       "extends": [
         "eslint:recommended",
-        "@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended"
       ],
@@ -50,7 +50,7 @@
       "files": ["apps/extension/**/*.{ts,tsx}"],
       "extends": [
         "eslint:recommended",
-        "@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended"
       ],

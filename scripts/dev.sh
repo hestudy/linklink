@@ -47,8 +47,9 @@ echo "🗄️  初始化数据库..."
 cd apps/server
 if [ ! -f "local.db" ]; then
     echo "创建本地数据库..."
-    bun run db:local &
-    sleep 2
+    # 启动数据库服务（在后台运行）
+    nohup bun run db:local > /dev/null 2>&1 &
+    sleep 3
     bun run db:push
     echo "✅ 数据库初始化完成。"
 else
@@ -60,12 +61,12 @@ cd ../..
 echo "🔄 启动所有应用..."
 
 # 使用 Turbo 并行启动所有应用
-bun run dev &
+nohup bun run dev > /dev/null 2>&1 &
 TURBO_PID=$!
 
 # 等待 Turbo 启动
 echo "⏳ 等待应用启动..."
-sleep 5
+sleep 8
 
 # 检查应用状态
 echo "🔍 检查应用状态..."
