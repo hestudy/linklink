@@ -15,9 +15,9 @@
     "postinstall": "wxt prepare",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts,tsx --fix",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage",
+    "test": "vitest --passWithNoTests",
+    "test:ui": "vitest --ui --passWithNoTests",
+    "test:coverage": "vitest --coverage --passWithNoTests",
     "clean": "rm -rf .output dist"
   },
   "dependencies": {
