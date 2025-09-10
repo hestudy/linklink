@@ -11,6 +11,10 @@
       "@/*": ["./src/*"]
     },
     "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
     "types": [
         "bun"
 
@@ -19,4 +23,8 @@
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
   }
+  ,
+  "include": [
+    "src/**/*"
+  ]
 }
