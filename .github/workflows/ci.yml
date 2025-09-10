@@ -34,6 +34,8 @@ jobs:
           cp apps/web/.env.example apps/web/.env
           cp apps/server/.env.example apps/server/.env
           cp apps/extension/.env.example apps/extension/.env
+      - name: Prebuild server (types)
+        run: bun run build:server
 
       - name: Run type checking
         run: bun run type-check
